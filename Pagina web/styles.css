@@ -1,0 +1,814 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #222;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.navbar .logo img {
+    width: 60px;  
+    height: 60px; 
+    object-fit: cover;  
+    border-radius: 50%;  
+}
+
+
+/* Menú de navegación */
+@keyframes slideDown {
+    0% { transform: translateY(-100%); } 
+    100% { transform: translateY(0); }  
+}
+
+header {
+    background-color: rgba(31, 30, 30, 0); 
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Texto adicional junto al logo */
+.navbar .menu-text {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-right: 10px; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo y Animación */
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    animation: logoAnimation 2s ease-in-out infinite alternate;
+    margin-right: -750px; 
+}
+
+/* Animación del logo */
+@keyframes logoAnimation {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    80% { transform: rotate(0deg); }
+}
+
+/* Estilo de los enlaces del menú */
+.navbar nav {
+    display: flex;
+}
+
+.navbar nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 10px 0;
+    position: relative;
+    transition: color 0.3s ease;
+    display: flex; 
+    align-items: center; 
+}
+
+/* Estilo de las imágenes dentro de los enlaces */
+.navbar nav a img.nav-icon {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 8px; 
+}
+
+/* Estilo de los enlaces en hover */
+.navbar nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.navbar nav a:hover {
+    color: #ffffff; 
+}
+
+.navbar nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Animación de movimiento para el logo */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* Sección Hero */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Sección Hero */
+.hero {
+    height: 100vh; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    color: #fff; 
+    text-align: center; 
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif; 
+    background-color: #333; 
+}
+
+/* Contenedor del contenido del Hero */
+.hero-content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+/* Logo en círculo */
+.hero-logo img {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    margin-bottom: 20px; 
+    object-fit: cover; 
+}
+
+/* Título del Hero */
+.hero-content h1 {
+    font-size: 3rem; 
+    font-weight: bold;
+    margin-bottom: 20px; 
+}
+
+/* Descripción del Hero */
+.hero-content p {
+    font-size: 1.5rem; 
+    margin-bottom: 20px;
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+/* Estilos para los botones */
+.hero-buttons {
+    margin-top: 30px; 
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+}
+
+.hero-buttons a {
+    background-color: #222; 
+    color: #fff; 
+    padding: 10px 20px; 
+    border-radius: 30px; 
+    font-size: 1rem; 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    transition: all 0.3s ease; 
+    position: relative;
+}
+
+/* Efecto hover */
+.hero-buttons a:hover {
+    background-color: #222; 
+    transform: scale(1.1); 
+}
+
+/* Efecto de sombra al pasar el mouse */
+.hero-buttons a:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+/* Estilos para las imágenes dentro de los botones */
+.hero-buttons .button-icon {
+    width: 20px; 
+    height: 20px; 
+    object-fit: contain; 
+    display: block; 
+    margin-top: 0; 
+}
+
+
+/* Efecto hover para el botón */
+.hero-btn:hover {
+    background-color: #333; 
+    transition: all 0.3s ease; 
+    position: relative;
+}
+
+/* Botón secundario */
+.hero-btn.secondary {
+    background-color: #222;
+    color: #ffffff; 
+}
+
+/* Efecto hover para el botón secundario */
+.hero-btn.secondary:hover {
+    background-color: #222; 
+}
+
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.btn-cta {
+    padding: 10px 20px;
+    background-color: #222;
+    color: #ffffff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: bounceIn 2s ease-in-out;
+}
+
+.btn-cta:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+/* Nueva sección de Configuración */
+.configuracion {
+    padding: 50px 20px;
+    background-color: #333;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out;
+}
+
+/* Título de la sección de configuración */
+.configuracion h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Descripción debajo del título */
+.configuracion p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #ccc;
+}
+
+/* Lista de configuración */
+.configuracion ul {
+    list-style-type: none;
+    padding: 0;
+    color: #fff;
+}
+
+.configuracion li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.configuracion code {
+    background-color: #444;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: #29a8ff;
+}
+
+
+/* Nueva sección de Configuración */
+.configuracion {
+    padding: 50px 20px;
+    background-color: #333;  
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    border-radius: 10px;
+    margin: 50px 0; 
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);  
+    animation: bounceIn 2s ease-in-out;
+}
+
+/* Contenedor de contenido de la sección */
+.configuracion-content {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 150px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    animation: zoomIn 2s ease-out;
+}
+
+/* Imagen de la sección */
+.configuracion-logo {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    margin-right: -50px; 
+    animation: shake 4s ease-in-out infinite;
+}
+
+.configuracion-logo img {
+    width: 700px; 
+    margin-right: -200px; 
+    height: auto; 
+    object-fit: contain;
+}
+
+/* Texto de la configuración */
+.configuracion-texto {
+    flex: 2; 
+    max-width: 800px; 
+    margin-left: -200px; 
+    color: #fff; 
+    padding-left: 20px; 
+}
+
+.configuracion-texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: left; 
+    margin-left: 0; 
+}
+
+
+
+
+/* Nueva sección de Descripción con imagen y texto */
+.descripcion {
+    padding: 50px 20px;
+    background-color: #333;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: left; 
+    animation: bounceIn 2s ease-in-out;
+}
+
+/* Título de la sección */
+.descripcion h2 {
+    font-size: 2.5rem; 
+    color: #fff; 
+    margin-bottom: 30px; 
+    text-align: center; 
+    font-weight: bold; 
+}
+
+/* Contenedor de contenido de la sección */
+.descripcion-content {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 150px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    animation: zoomIn 2s ease-out;
+}
+
+/* Logo */
+.descripcion-logo {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+    margin-left: -250px; 
+    animation: shake 4s ease-in-out infinite;
+}
+
+.descripcion-logo img {
+    width: 700px; 
+    height: auto; 
+    object-fit: contain; 
+}
+
+/* Texto de la descripción */
+.descripcion-texto {
+    flex: 2; 
+    max-width: 800px; 
+    margin-right: -200px; 
+    max-width: 800px; 
+    color: #fff; 
+}
+
+.descripcion-texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Sección de Características */
+.features {
+    padding: 50px 20px;
+    background-color: #222;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.features-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-card {
+    background-color: #333;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.05); 
+}
+
+.feature-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 1.1rem;
+}
+
+/* Sección de Contadores */
+.contadores {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #222;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+}
+
+.contador-box {
+    background-color: #333;
+    padding: 20px 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 48%;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;  
+    animation: bounceIn 2s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}
+
+.contador-box:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+}
+
+.contador-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center; 
+}
+
+.contador {
+    background-color: #22222200;
+    padding: 30px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.contador p {
+    margin: 0;
+    font-size: 3rem;
+    animation: countUp 2s ease-in-out;
+}
+
+/* Asegurando que las imágenes tengan el mismo tamaño */
+.contador-box img {
+    width: 100px;   
+    height: 100px;  
+    object-fit: cover; 
+    border-radius: 50%; 
+    margin-bottom: 20px; 
+}
+
+/* Sección de Soporte */
+.soporte {
+    padding: 50px 20px;
+    background-color: #333;
+    text-align: center;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.soporte h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.soporte p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* Botones */
+.soporte .btn-cta {
+    background-color: #2d0ce9e7;
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.soporte .btn-cta:hover {
+    background-color: #3f3f3f;
+    transform: scale(1.05);
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar nav {
+        justify-content: center; 
+        gap: 6px; 
+    }
+
+    .navbar nav a {
+        font-size: 0.5rem;
+        padding: -5px -5px; 
+    }
+
+    /* Modificar el logo y el texto del menú en móvil */
+    .navbar .logo img {
+        width: 0px;
+        height: 0px;
+    }
+
+    .menu-text {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons a {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+     /* Ajuste de la sección de características */
+     .features {
+        padding: 30px 10px; 
+    }
+
+    .features h2 {
+        font-size: 1.8rem; 
+        margin-bottom: 20px; /
+    }
+
+    /* Ajuste de las tarjetas */
+    .features-cards {
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+    }
+
+    .feature-card {
+        padding: 20px; 
+    }
+
+    .feature-card img {
+        width: 80px; 
+        height: 80px;
+        margin-bottom: 10px; 
+    }
+
+    .feature-card h3 {
+        font-size: 1.3rem; 
+    }
+
+    .feature-card p {
+        font-size: 1rem; 
+    }
+
+    .configuracion {
+        padding: 20px 10px;
+        text-align: center;
+    }
+
+    .configuracion h2 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .configuracion p {
+        font-size: 1rem;
+    }
+
+    .configuracion-logo img {
+        width: 80%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .descripcion-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .descripcion-logo img {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .descripcion-texto {
+        font-size: 1rem;
+    }
+
+    /* Contenedores de la sección de contadores */
+    .contadores {
+        flex-direction: column; 
+        gap: 20px; 
+        padding: 30px 10px; 
+    }
+
+    /* Caja de contador */
+    .contador-box {
+        width: 100%; 
+        padding: 15px 10px; 
+    }
+
+    /* Imágenes de los contadores */
+    .contador-box img {
+        width: 80px;  
+        height: 80px; 
+        margin-bottom: 15px; 
+    }
+
+    /* Títulos de los contadores */
+    .contador-box h3 {
+        font-size: 1.2rem; 
+        margin-bottom: 10px; 
+    }
+
+    /* Contadores */
+    .contador {
+        padding: 20px; 
+        font-size: 2rem; 
+    }
+
+    .contador p {
+        font-size: 2.5rem; 
+    }
+
+    .soporte p {
+        font-size: 1rem;
+    }
+
+    .soporte .btn-cta {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .descripcion {
+        padding: 30px 10px; 
+    }
+
+    /* Contenedor de contenido */
+    .descripcion-content {
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    /* Logo */
+    .descripcion-logo {
+        margin-left: 0; 
+        justify-content: center; 
+        animation: none; 
+    }
+
+    .descripcion-logo img {
+        width: 80%; 
+        margin-left: 0; 
+        margin-right: 0; 
+    }
+
+    /* Texto */
+    .descripcion-texto {
+        max-width: 100%; 
+        margin-right: 0; 
+        text-align: center; 
+    }
+
+    .descripcion-texto p {
+        font-size: 1rem; 
+    }
+
+    /* Título */
+    .descripcion h2 {
+        font-size: 1.8rem; 
+    }
+
+    .configuracion-content {
+        flex-direction: column; 
+        gap: 30px; 
+    }
+
+    .configuracion-logo {
+        margin-right: 0; 
+        justify-content: center; 
+        animation: none; 
+    }
+
+    .configuracion-logo img {
+        width: 80%; 
+        margin-right: 0; 
+        margin-left: 0; 
+    }
+
+    .configuracion-texto {
+        max-width: 100%; 
+        margin-left: 0; 
+        padding-left: 0; 
+        text-align: center; 
+    }
+
+    .configuracion-texto p {
+        font-size: 1rem; 
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
